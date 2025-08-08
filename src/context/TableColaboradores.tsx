@@ -10,7 +10,7 @@ import {
 import type {ReactElement} from 'react';
 import {headerTableDatas} from '../data/tableData';
 
-export default function FormDefault(): ReactElement {
+export default function TableEmployee(): ReactElement {
      return (
           <TableContainer component={Paper}>
                <Table>
