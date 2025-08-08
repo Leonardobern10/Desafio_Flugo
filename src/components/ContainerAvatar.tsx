@@ -8,10 +8,7 @@ import UserAvatar from './Header/UserAvatar';
 
 export default function ContainerAvatar(): ReactElement {
      return (
-          <Box
-               sx={{
-                    justifySelf: 'flex-start',
-               }}>
+          <Box sx={{justifySelf: 'flex-start'}}>
                <UserAvatar />
           </Box>
      );
