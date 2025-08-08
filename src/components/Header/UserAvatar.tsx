@@ -1,5 +1,4 @@
 import type {ReactElement} from 'react';
-import './Avatar.css';
 import {Avatar} from '@mui/material';
 import avatar1 from '../../assets/avatar1.png';
 
