@@ -11,10 +11,17 @@ export default function SideBar(): ReactElement {
                     flexDirection: 'column',
                     height: '100%',
                     width: '20%',
-                    rowGap: 4,
+                    rowGap: 1,
                }}>
                <Logo />
-               <Box>Candidatos</Box>
+               <Box
+                    sx={{
+                         color: 'text.secondary',
+                         fontSize: '14px',
+                         lineHeight: '22px',
+                    }}>
+                    Colaboradores
+               </Box>
           </Grid>
      );
 }
