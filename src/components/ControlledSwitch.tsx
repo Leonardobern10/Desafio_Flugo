@@ -4,16 +4,28 @@ import {Box, Typography} from '@mui/material';
 
 export default function ControlledSwitch(props: {
      checked: boolean;
-     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+     onChange: (
+          event: React.ChangeEvent<HTMLInputElement>,
+          checked: boolean
+     ) => void;
 }) {
      return (
-          <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
+          <Box
+               sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'flex-start',
+                    alignItems: 'center',
+                    gap: 2,
+               }}>
                <Switch
                     checked={props.checked}
                     onChange={props.onChange}
                     slotProps={{input: {'aria-label': 'controlled'}}}
                />
-               <Typography>Ativar ao criar</Typography>
+               <Typography color="text.secondary" sx={{fontSize: '14px'}}>
+                    Ativar ao criar
+               </Typography>
           </Box>
      );
 }
