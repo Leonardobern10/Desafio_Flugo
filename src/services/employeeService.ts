@@ -2,20 +2,22 @@ import {addDoc, collection, getDocs} from 'firebase/firestore';
 import {db} from './firebase';
 import type {EmployerFormDataType} from 'types/EmployerFormDataType';
 
-export async function getEmployees(): Promise<void> {
+export async function getEmployees(): Promise<EmployerFormDataType[]> {
      try {
           // Referência para a coleção "employees"
           const colRef = collection(db, 'employees');
           // Recupera todos os documentos
           const snapshot = await getDocs(colRef);
           // Percorre os documentos
-          const funcionarios = snapshot.docs.map((doc) => ({
-               id: doc.id,
-               ...doc.data(),
+          return snapshot.docs.map((el) => ({
+               titulo: el.get('titulo'),
+               email: el.get('email'),
+               departamento: el.get('departamento'),
+               status: el.get('status'),
           }));
-          console.log(funcionarios);
      } catch (error) {
           console.error('Erro ao buscar funcionários:', error);
+          return [];
      }
 }
 
