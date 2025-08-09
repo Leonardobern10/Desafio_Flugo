@@ -26,6 +26,21 @@ const theme = createTheme({
                textTransform: 'none',
           },
      },
+     components: {
+          MuiLink: {
+               styleOverrides: {
+                    root: {
+                         fontWeight: 400,
+                         fontSize: '14px',
+                         lineHeight: '22px',
+                         letterSpacing: 0,
+                    },
+               },
+               defaultProps: {
+                    color: '#212B36',
+               },
+          },
+     },
 });
 
 export default theme;
