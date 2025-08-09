@@ -1,7 +1,8 @@
-import {Box, Button, Typography} from '@mui/material';
+import {Box} from '@mui/material';
 import {useState, type ReactElement} from 'react';
 import TableEmployee from '../context/TableColaboradores';
 import FormContext from '../context/FormContext';
+import TopTable from './TopTable';
 
 export default function MainContent(): ReactElement {
      const [showStepper, setShowStepper] = useState(false);
@@ -21,32 +22,7 @@ export default function MainContent(): ReactElement {
                     <FormContext />
                ) : (
                     <Box>
-                         <Box
-                              sx={{
-                                   display: 'flex',
-                                   flexDirection: 'row',
-                                   justifyContent: 'space-between',
-                                   alignItems: 'center',
-                                   height: 'fit-content',
-                              }}>
-                              <Typography
-                                   variant="h5"
-                                   sx={{color: 'text.primary'}}>
-                                   Colaboradores
-                              </Typography>
-                              <Button
-                                   sx={{
-                                        color: '#fff',
-                                        borderRadius: 2,
-                                        paddingY: 1,
-                                   }}
-                                   onClick={() => setShowStepper(true)}
-                                   variant="contained"
-                                   size="large"
-                                   color="primary">
-                                   Novo Colaborador
-                              </Button>
-                         </Box>
+                         <TopTable onClick={setShowStepper} />
                          <Box
                               sx={{
                                    height: '80%',
