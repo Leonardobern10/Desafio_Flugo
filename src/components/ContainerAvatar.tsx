@@ -1,6 +1,6 @@
 import {Box} from '@mui/material';
 import type {ReactElement} from 'react';
-import UserAvatar from './Header/UserAvatar';
+import UserAvatar from './UserAvatar';
 
 /**
  * Talvez trocar esse box por um icone
