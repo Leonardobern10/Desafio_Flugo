@@ -53,6 +53,7 @@ export default function Step1Form(): ReactElement {
                     control={control}
                     render={({field}) => (
                          <ControlledSwitch
+                              text="Ativar ao criar"
                               checked={field.value}
                               onChange={(_, checked) => field.onChange(checked)}
                          />

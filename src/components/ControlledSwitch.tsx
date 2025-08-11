@@ -3,6 +3,7 @@ import Switch from '@mui/material/Switch';
 import {Box, Typography} from '@mui/material';
 
 export default function ControlledSwitch(props: {
+     text: string;
      checked: boolean;
      onChange: (
           event: React.ChangeEvent<HTMLInputElement>,
@@ -24,7 +25,7 @@ export default function ControlledSwitch(props: {
                     slotProps={{input: {'aria-label': 'controlled'}}}
                />
                <Typography color="text.secondary" sx={{fontSize: '14px'}}>
-                    Ativar ao criar
+                    {props.text}
                </Typography>
           </Box>
      );
