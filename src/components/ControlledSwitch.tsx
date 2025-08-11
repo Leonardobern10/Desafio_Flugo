@@ -1,15 +1,12 @@
-import * as React from 'react';
 import Switch from '@mui/material/Switch';
 import {Box, Typography} from '@mui/material';
+import type {ControlledSwicthType} from 'types/ControlledSwitchType';
 
-export default function ControlledSwitch(props: {
-     text: string;
-     checked: boolean;
-     onChange: (
-          event: React.ChangeEvent<HTMLInputElement>,
-          checked: boolean
-     ) => void;
-}) {
+export default function ControlledSwitch({
+     text,
+     checked,
+     onChange,
+}: ControlledSwicthType) {
      return (
           <Box
                sx={{
@@ -20,12 +17,12 @@ export default function ControlledSwitch(props: {
                     gap: 2,
                }}>
                <Switch
-                    checked={props.checked}
-                    onChange={props.onChange}
+                    checked={checked}
+                    onChange={onChange}
                     slotProps={{input: {'aria-label': 'controlled'}}}
                />
                <Typography color="text.secondary" sx={{fontSize: '14px'}}>
-                    {props.text}
+                    {text}
                </Typography>
           </Box>
      );

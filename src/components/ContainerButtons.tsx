@@ -1,14 +1,15 @@
 import {containerButtonsData} from '@data/containerButtonsData';
 import {Box, Button} from '@mui/material';
+import type {ContainerButtonsType} from 'types/ContainerButtonsType';
 import type {ReactElement} from 'react';
 
-export default function ContainerButtons(props: {
-     activeStep: number;
-     steps: Array<{step: string; title: string}>;
-     onBack: () => void;
-     onNext: () => void;
-     onSubmit: () => void;
-}): ReactElement {
+export default function ContainerButtons({
+     activeStep,
+     steps,
+     onBack,
+     onNext,
+     onSubmit,
+}: ContainerButtonsType): ReactElement {
      return (
           <Box
                sx={{
@@ -18,24 +19,21 @@ export default function ContainerButtons(props: {
                }}>
                <Button
                     type="button"
-                    disabled={props.activeStep === 0}
-                    onClick={props.onBack}
+                    disabled={activeStep === 0}
+                    onClick={onBack}
                     variant="text"
                     sx={{color: 'text.secondary'}}>
                     {containerButtonsData.backButton}
                </Button>
-               {props.activeStep < props.steps.length - 1 && (
-                    <Button
-                         type="button"
-                         onClick={props.onNext}
-                         variant="contained">
+               {activeStep < steps.length - 1 && (
+                    <Button type="button" onClick={onNext} variant="contained">
                          {containerButtonsData.nextButton}
                     </Button>
                )}
-               {props.activeStep === props.steps.length - 1 && (
+               {activeStep === steps.length - 1 && (
                     <Button
                          type="submit"
-                         onClick={props.onSubmit}
+                         onClick={onSubmit}
                          variant="contained"
                          color="primary">
                          {containerButtonsData.finishButton}
