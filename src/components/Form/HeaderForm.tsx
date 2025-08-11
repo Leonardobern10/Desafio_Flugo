@@ -6,13 +6,7 @@ import {dataHeader} from '@data/dataHeader';
 export default function HeaderForm(props: {onClick: () => void}): ReactElement {
      return (
           <Breadcrumbs
-               separator={
-                    <CircleIcon
-                         sx={{
-                              fontSize: 5,
-                         }}
-                    />
-               }
+               separator={<CircleIcon sx={{fontSize: 5}} />}
                aria-label="breadcrumb">
                <Link href="" underline="none" onClick={props.onClick}>
                     <Typography color="text.primary">

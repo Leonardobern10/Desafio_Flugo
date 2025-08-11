@@ -10,8 +10,6 @@ export default function Step2Form(): ReactElement {
           formState: {errors},
      } = useFormContext();
 
-     // Exemplo de opções para o sele
-
      return (
           <Box
                sx={{
@@ -20,7 +18,6 @@ export default function Step2Form(): ReactElement {
                     gap: 2,
                }}>
                <TextField
-                    sx={{}}
                     size="medium"
                     variant="standard"
                     select
