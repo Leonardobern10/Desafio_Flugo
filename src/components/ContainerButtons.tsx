@@ -3,7 +3,7 @@ import type {ReactElement} from 'react';
 
 export default function ContainerButtons(props: {
      activeStep: number;
-     steps: Array<string>;
+     steps: Array<{step: string; title: string}>;
      onBack: () => void;
      onNext: () => void;
      onSubmit: () => void;
