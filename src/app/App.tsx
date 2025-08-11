@@ -1,7 +1,7 @@
 import {Box, Grid} from '@mui/material';
 import SideBar from '../components/SideBar/SideBar';
-import ContainerAvatar from '../components/ContainerAvatar';
 import MainContent from '../components/MainContent';
+import Header from '@components/Header';
 
 function App() {
      return (
@@ -9,25 +9,24 @@ function App() {
                sx={{
                     padding: 4,
                     bgcolor: '#FFF',
-                    width: '100dvw',
+                    width: '100%',
                     height: '100dvh',
                     display: 'flex',
-                    flexDirection: 'row',
+                    flexDirection: 'column',
                     justifyContent: 'space-between',
                     alignItems: 'center',
                }}>
-               <SideBar />
+               <Header />
                <Grid
                     sx={{
                          height: '100%',
                          width: '100%',
                          display: 'flex',
-                         flexDirection: 'column',
+                         flexDirection: {sx: 'column', lg: 'row'},
                          justifyContent: 'center',
                          alignItems: 'end',
-                         rowGap: 5,
                     }}>
-                    <ContainerAvatar />
+                    <SideBar />
                     <MainContent />
                </Grid>
           </Box>

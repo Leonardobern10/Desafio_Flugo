@@ -1,6 +1,5 @@
 import {Avatar, Box, Grid, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
-import Logo from '../Logo/Logo';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 export default function SideBar(): ReactElement {
@@ -8,13 +7,13 @@ export default function SideBar(): ReactElement {
           <Grid
                component={'aside'}
                sx={{
+                    paddingTop: 2,
                     display: 'flex',
                     flexDirection: 'column',
                     height: '100%',
                     width: '20%',
                     rowGap: 2,
                }}>
-               <Logo />
                <Box
                     sx={{
                          color: 'text.secondary',
@@ -24,8 +23,9 @@ export default function SideBar(): ReactElement {
                     }}>
                     <Box
                          sx={{
-                              display: {sm: 'none', md: 'flex'},
-                              justifyContent: 'space-between',
+                              display: 'flex',
+                              flexDirection: 'row',
+                              justifyContent: 'flex-start',
                               alignItems: 'center',
                               columnGap: 1,
                          }}>
@@ -37,10 +37,14 @@ export default function SideBar(): ReactElement {
                                    width: '20px',
                                    height: '20px',
                                    opacity: '50%',
-                              }}></Avatar>
+                              }}
+                         />
                          <Typography
                               fontSize="small"
-                              sx={{width: 'fit-content'}}>
+                              color="text.secondary"
+                              sx={{
+                                   width: 'fit-content',
+                              }}>
                               Colaboradores
                          </Typography>
                          <Box
@@ -49,6 +53,7 @@ export default function SideBar(): ReactElement {
                                    width: '12px',
                                    height: '13px',
                                    alignItems: 'center',
+                                   marginLeft: 'auto',
                               }}>
                               <ArrowForwardIosIcon
                                    sx={{height: '100%', width: '100%'}}
