@@ -23,7 +23,6 @@ export default function Step2Form(): ReactElement {
                     variant="standard"
                     select
                     label="Selecione um departamento"
-                    defaultValue=""
                     {...register('departamento')}
                     error={!!errors.departamento}
                     helperText={errors.departamento?.message?.toString()}>
