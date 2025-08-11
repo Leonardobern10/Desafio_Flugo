@@ -1,5 +1,5 @@
 import {Box, Grid} from '@mui/material';
-import SideBar from '../components/SideBar';
+import SideBar from '../components/SideBar/SideBar';
 import ContainerAvatar from '../components/ContainerAvatar';
 import MainContent from '../components/MainContent';
 
@@ -7,7 +7,7 @@ function App() {
      return (
           <Box
                sx={{
-                    p: 2,
+                    padding: 4,
                     bgcolor: '#FFF',
                     width: '100dvw',
                     height: '100dvh',
