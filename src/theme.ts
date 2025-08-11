@@ -40,6 +40,20 @@ const theme = createTheme({
                     color: '#212B36',
                },
           },
+          MuiButton: {
+               styleOverrides: {
+                    root: {
+                         color: '#FFFFFF',
+                         fontWeight: 700,
+                         fontStyle: 'bold',
+                         fontSize: '15px',
+                         lineHeight: '26px',
+                         letterSpacing: 0,
+                         paddingY: 2,
+                    },
+               },
+               defaultProps: {},
+          },
      },
 });
 

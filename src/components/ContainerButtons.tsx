@@ -19,7 +19,8 @@ export default function ContainerButtons(props: {
                     type="button"
                     disabled={props.activeStep === 0}
                     onClick={props.onBack}
-                    variant="text">
+                    variant="text"
+                    sx={{color: 'text.secondary'}}>
                     Voltar
                </Button>
                {props.activeStep < props.steps.length - 1 && (
@@ -36,7 +37,7 @@ export default function ContainerButtons(props: {
                          onClick={props.onSubmit}
                          variant="contained"
                          color="primary">
-                         Finalizar
+                         Concluir
                     </Button>
                )}
           </Box>
