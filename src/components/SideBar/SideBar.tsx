@@ -1,6 +1,7 @@
 import {Avatar, Box, Grid, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import {dataSidebar} from '@data/dataSideBar';
 
 export default function SideBar(): ReactElement {
      return (
@@ -45,7 +46,7 @@ export default function SideBar(): ReactElement {
                               sx={{
                                    width: 'fit-content',
                               }}>
-                              Colaboradores
+                              {dataSidebar.titleOption}
                          </Typography>
                          <Box
                               sx={{
