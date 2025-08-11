@@ -2,7 +2,7 @@ import {Box} from '@mui/material';
 import {useState, type ReactElement} from 'react';
 import TableEmployee from '../context/TableColaboradores';
 import FormContext from '../context/FormContext';
-import TopTable from './TopTable';
+import TopTable from './Table/TopTable';
 
 export default function MainContent(): ReactElement {
      const [showStepper, setShowStepper] = useState(false);
@@ -19,10 +19,16 @@ export default function MainContent(): ReactElement {
                     alignItems: 'stretch',
                }}>
                {showStepper ? (
-                    <FormContext />
+                    <FormContext onClick={() => setShowStepper(false)} />
                ) : (
-                    <Box>
-                         <TopTable onClick={setShowStepper} />
+                    <Box
+                         sx={{
+                              display: 'flex',
+                              flexDirection: 'column',
+                              rowGap: 4,
+                              paddingX: 4,
+                         }}>
+                         <TopTable onClick={() => setShowStepper(true)} />
                          <Box
                               sx={{
                                    height: '80%',
