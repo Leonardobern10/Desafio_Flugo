@@ -1,9 +1,10 @@
 import {Step, StepLabel, Stepper, Typography} from '@mui/material';
+import type {GuideStepsType} from 'types/GuideStepsType';
 import type {ReactElement} from 'react';
 
 export default function GuideSteps(props: {
      activeStep: number;
-     steps: Array<{title: string; step: string}>;
+     steps: Array<GuideStepsType>;
 }): ReactElement {
      return (
           <Stepper

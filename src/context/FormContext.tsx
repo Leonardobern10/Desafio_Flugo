@@ -1,6 +1,5 @@
 import {useState, type ReactElement} from 'react';
 import {Box, Container, Typography} from '@mui/material';
-
 import {FormProvider, useForm} from 'react-hook-form';
 import type {EmployerFormDataType} from '../types/EmployerFormDataType';
 import ProgressForm from '../components/ProgressForm';
@@ -10,6 +9,7 @@ import HeaderForm from '@components/Form/HeaderForm';
 import {createUser, getEmployees} from '../services/employeeService';
 import Step1Form from '@components/Form/Step1Form';
 import Step2Form from '@components/Form/Step2Form';
+import {dataGuideSteps} from '@data/dataGuideSteps';
 
 export default function FormContext(props: {
      onClick: () => void;
@@ -68,11 +68,6 @@ export default function FormContext(props: {
           formData.reset();
      };
 
-     const stepTitle = [
-          {step: 'Infos Básicas', title: 'Informações Básicas'},
-          {step: 'Infos Profissionais', title: 'Informações Profissionais'},
-     ];
-
      const renderStep = () => {
           switch (activeStep) {
                case 0:
@@ -98,7 +93,7 @@ export default function FormContext(props: {
                          {/* Stepper */}
                          <GuideSteps
                               activeStep={activeStep}
-                              steps={stepTitle}
+                              steps={dataGuideSteps}
                          />
                          {/* Formulário */}
                          <FormProvider {...formData}>
@@ -114,7 +109,7 @@ export default function FormContext(props: {
                                    <Typography
                                         variant="h5"
                                         color="text.secondary">
-                                        {stepTitle[titleStep].title}
+                                        {dataGuideSteps[titleStep].title}
                                    </Typography>
                                    <Box sx={{flex: 1}}>{renderStep()}</Box>
                               </Box>
@@ -122,7 +117,7 @@ export default function FormContext(props: {
                     </Box>
                     <ContainerButtons
                          activeStep={activeStep}
-                         steps={stepTitle}
+                         steps={dataGuideSteps}
                          onBack={handleBack}
                          onNext={handleNext}
                          onSubmit={formData.handleSubmit(handleFinish)}
