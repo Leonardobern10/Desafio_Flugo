@@ -24,7 +24,7 @@ export default function SideBar(): ReactElement {
                     }}>
                     <Box
                          sx={{
-                              display: 'flex',
+                              display: {sm: 'none', md: 'flex'},
                               justifyContent: 'space-between',
                               alignItems: 'center',
                               columnGap: 1,
