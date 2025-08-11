@@ -10,13 +10,16 @@ export default function ProgressForm(props: {progress: number}): ReactElement {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    marginY: 2,
                }}>
                <LinearProgress
                     sx={{width: '95%'}}
                     variant="determinate"
                     value={props.progress}
                />
-               <Typography>{props.progress}%</Typography>
+               <Typography fontSize="small" color="text.secondary">
+                    {props.progress}%
+               </Typography>
           </Box>
      );
 }
