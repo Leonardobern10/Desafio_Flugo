@@ -26,12 +26,12 @@ export default function MainContent(): ReactElement {
                               display: 'flex',
                               flexDirection: 'column',
                               rowGap: 4,
-                              paddingX: 4,
+                              paddingLeft: 4,
                          }}>
                          <TopTable onClick={() => setShowStepper(true)} />
                          <Box
                               sx={{
-                                   height: '80%',
+                                   height: '100%',
                               }}>
                               <TableEmployee />
                          </Box>
