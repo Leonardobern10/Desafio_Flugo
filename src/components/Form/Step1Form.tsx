@@ -19,9 +19,7 @@ export default function Step1Form(): ReactElement {
                          },
                     }}
                     label="Titulo"
-                    {...register('titulo', {
-                         required: 'Nome é obrigatório',
-                    })}
+                    {...register('titulo')}
                     placeholder="e.g. João Silva"
                     size="medium"
                     error={!!errors.titulo}
@@ -37,13 +35,7 @@ export default function Step1Form(): ReactElement {
                     size="medium"
                     label="Email"
                     placeholder="e.g. john@gmail.com"
-                    {...register('email', {
-                         required: 'Email é obrigatório',
-                         pattern: {
-                              value: /\S+@\S+\.\S+/,
-                              message: 'Email inválido',
-                         },
-                    })}
+                    {...register('email')}
                     error={!!errors.email}
                     helperText={errors.email?.message?.toString()}
                />

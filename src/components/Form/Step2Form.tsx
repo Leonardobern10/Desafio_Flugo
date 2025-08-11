@@ -3,12 +3,13 @@ import {Box, MenuItem, TextField} from '@mui/material';
 
 import type {ReactElement} from 'react';
 import {useFormContext} from 'react-hook-form';
+import type {EmployeeSchemaType} from '../../validations/employeeSchema';
 
 export default function Step2Form(): ReactElement {
      const {
           register,
           formState: {errors},
-     } = useFormContext();
+     } = useFormContext<EmployeeSchemaType>();
 
      return (
           <Box
@@ -23,9 +24,7 @@ export default function Step2Form(): ReactElement {
                     select
                     label="Selecione um departamento"
                     defaultValue=""
-                    {...register('departamento', {
-                         required: 'Departamento é obrigatório',
-                    })}
+                    {...register('departamento')}
                     error={!!errors.departamento}
                     helperText={errors.departamento?.message?.toString()}>
                     {allDepartaments.map((option) => (
