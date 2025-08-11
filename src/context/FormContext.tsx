@@ -1,20 +1,25 @@
 import {useState, type ReactElement} from 'react';
 import {Box, Container, Typography} from '@mui/material';
-import Step1Form from '../components/Step1Form';
-import Step2Form from '../components/Step2Form';
+
 import {FormProvider, useForm} from 'react-hook-form';
 import type {EmployerFormDataType} from '../types/EmployerFormDataType';
 import ProgressForm from '../components/ProgressForm';
-import GuideSteps from '../components/GuideSteps';
+import GuideSteps from '../components/Form/GuideSteps';
 import ContainerButtons from '../components/ContainerButtons';
-import HeaderForm from '@components/HeaderForm';
+import HeaderForm from '@components/Form/HeaderForm';
 import {createUser, getEmployees} from '../services/employeeService';
+import Step1Form from '@components/Form/Step1Form';
+import Step2Form from '@components/Form/Step2Form';
 
-export default function FormContext(): ReactElement {
+export default function FormContext(props: {
+     onClick: () => void;
+}): ReactElement {
      // Gerencia o progresso no processo de cadastro
      const [progress, setProgress] = useState<number>(0);
+
      // Gerencia o titulo a ser exibido no step
      const [titleStep, setTitleStep] = useState<number>(0);
+
      // Gerencia a etapa atual no cadastro
      const [activeStep, setActiveStep] = useState<number>(0);
 
@@ -46,12 +51,13 @@ export default function FormContext(): ReactElement {
      const handleFinish = (data: any) => {
           const dataToSave = {
                ...data,
-               status: data.status ? 'ativo' : 'inativo',
+               status: data.status ? 'Ativo' : 'Inativo',
           };
           alert('Cadastro concluído!\n' + JSON.stringify(dataToSave, null, 2));
           reset();
           createUser(dataToSave);
           getEmployees();
+          props.onClick();
      };
 
      // Método que reseta todas as variaveis
@@ -62,7 +68,10 @@ export default function FormContext(): ReactElement {
           formData.reset();
      };
 
-     const steps = ['Infos Básicas', 'Infos Profissionais'];
+     const stepTitle = [
+          {step: 'Infos Básicas', title: 'Informações Básicas'},
+          {step: 'Infos Profissionais', title: 'Informações Profissionais'},
+     ];
 
      const renderStep = () => {
           switch (activeStep) {
@@ -77,7 +86,7 @@ export default function FormContext(): ReactElement {
 
      return (
           <Box>
-               <HeaderForm />
+               <HeaderForm onClick={props.onClick} />
                <ProgressForm progress={progress} />
                <Container maxWidth="xl" sx={{mt: 4}}>
                     <Box
@@ -87,7 +96,10 @@ export default function FormContext(): ReactElement {
                               minHeight: '280px',
                          }}>
                          {/* Stepper */}
-                         <GuideSteps activeStep={activeStep} steps={steps} />
+                         <GuideSteps
+                              activeStep={activeStep}
+                              steps={stepTitle}
+                         />
                          {/* Formulário */}
                          <FormProvider {...formData}>
                               <Box
@@ -102,7 +114,7 @@ export default function FormContext(): ReactElement {
                                    <Typography
                                         variant="h5"
                                         color="text.secondary">
-                                        {steps[titleStep]}
+                                        {stepTitle[titleStep].title}
                                    </Typography>
                                    <Box sx={{flex: 1}}>{renderStep()}</Box>
                               </Box>
@@ -110,13 +122,12 @@ export default function FormContext(): ReactElement {
                     </Box>
                     <ContainerButtons
                          activeStep={activeStep}
-                         steps={steps}
+                         steps={stepTitle}
                          onBack={handleBack}
                          onNext={handleNext}
                          onSubmit={formData.handleSubmit(handleFinish)}
                     />
                </Container>
-               <button onClick={getEmployees}>Search</button>
           </Box>
      );
 }
