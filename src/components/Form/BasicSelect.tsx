@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {type SelectChangeEvent} from '@mui/material/Select';
 import {useState} from 'react';
-import {allDepartaments} from '../../data/allDepartaments';
+import {allDepartaments, selectLabel} from '@data/datasSelect';
 
 export default function BasicSelect() {
      const [age, setAge] = useState<string>('');
@@ -17,7 +17,7 @@ export default function BasicSelect() {
           <Box sx={{minWidth: 120}}>
                <FormControl fullWidth variant="standard">
                     <InputLabel id="demo-simple-select-label">
-                         Selecione um departamento
+                         {selectLabel}
                     </InputLabel>
                     <Select
                          labelId="demo-simple-select-label"

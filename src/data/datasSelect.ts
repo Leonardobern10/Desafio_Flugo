@@ -1,6 +1,8 @@
 import {Departaments} from '../types/Departaments';
 import type {DepartamentsType} from '../types/DepartamentsType';
 
+export const selectLabel = 'Selecione um departamento';
+
 export const allDepartaments: Array<DepartamentsType> = [
      {
           index: 0,
