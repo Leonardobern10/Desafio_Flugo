@@ -13,10 +13,10 @@ export default function EmployeeRow({
 
      return (
           <TableRow>
-               <TitleTableCell data={titulo} />
-               <SmallTableCell data={email} />
-               <SmallTableCell data={departamento} />
-               <StatusTableCell data={status} />
+               <TitleTableCell text={titulo} />
+               <SmallTableCell text={email} />
+               <SmallTableCell text={departamento} />
+               <StatusTableCell text={status} />
           </TableRow>
      );
 }

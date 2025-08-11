@@ -1,7 +1,8 @@
 import {Box, TableCell, Typography} from '@mui/material';
+import type {TableCellType} from 'types/TableCellType';
 import {type ReactElement} from 'react';
 
-export default function StatusTableCell(props: {data: string}): ReactElement {
+export default function StatusTableCell({text}: TableCellType): ReactElement {
      return (
           <TableCell align="right">
                <Box
@@ -12,11 +13,11 @@ export default function StatusTableCell(props: {data: string}): ReactElement {
                     <Typography
                          sx={{
                               backgroundColor:
-                                   props.data === 'Ativo'
+                                   text === 'Ativo'
                                         ? 'rgba(34, 197, 94, 0.16)'
                                         : 'rgba(255, 86, 48, 0.16)',
                               color:
-                                   props.data === 'Ativo'
+                                   text === 'Ativo'
                                         ? 'rgba(17, 141, 87, 1)'
                                         : 'rgba(183, 29, 24, 1)',
                               width: 'fit-content',
@@ -25,7 +26,7 @@ export default function StatusTableCell(props: {data: string}): ReactElement {
                               fontWeight: 700,
                               fontSize: '12px',
                          }}>
-                         {props.data}
+                         {text}
                     </Typography>
                </Box>
           </TableCell>

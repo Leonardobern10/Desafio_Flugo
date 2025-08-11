@@ -1,10 +1,12 @@
 import {TableCell, Typography} from '@mui/material';
+import type {TableCellType} from 'types/TableCellType';
+
 import type {ReactElement} from 'react';
 
-export default function SmallTableCell(props: {data: string}): ReactElement {
+export default function SmallTableCell({text}: TableCellType): ReactElement {
      return (
           <TableCell align="left">
-               <Typography fontSize="small">{props.data}</Typography>
+               <Typography fontSize="small">{text}</Typography>
           </TableCell>
      );
 }
