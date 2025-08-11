@@ -1,4 +1,4 @@
-import {useState, type ReactElement} from 'react';
+import {type ReactElement} from 'react';
 import {Box, Container, Typography} from '@mui/material';
 import {FormProvider, useForm} from 'react-hook-form';
 import ProgressForm from '../components/ProgressForm';
@@ -14,16 +14,11 @@ import {
      employeeSchema,
      type EmployeeSchemaType,
 } from '../validations/employeeSchema';
+import {useFormSteps} from '../hooks/useFomSteps'; // corrigir nome do arquivo aqui!
 
 export default function FormContext(props: {
      onClick: () => void;
 }): ReactElement {
-     // Gerencia o progresso no processo de cadastro
-     const [progress, setProgress] = useState<number>(0);
-     // Gerencia o titulo a ser exibido no step
-     const [titleStep, setTitleStep] = useState<number>(0);
-     // Gerencia a etapa atual no cadastro
-     const [activeStep, setActiveStep] = useState<number>(0);
      const formData = useForm<EmployeeSchemaType>({
           resolver: zodResolver(employeeSchema),
           defaultValues: {
@@ -34,47 +29,23 @@ export default function FormContext(props: {
           },
      });
 
-     // Funções para transitar entre os passos
-     const handleNext = async () => {
-          let isValid = false;
+     const {
+          progress,
+          titleStep,
+          activeStep,
+          handleNext,
+          handleBack,
+          handleFinish,
+     } = useFormSteps({
+          // onSubmit não está sendo usado, pode remover do hook se quiser
+          createUser,
+          getEmployees,
+          onClick: props.onClick,
+     });
 
-          if (activeStep === 0) {
-               isValid = await formData.trigger(['titulo', 'email', 'status']);
-          } else if (activeStep === 1) {
-               isValid = await formData.trigger(['departamento']);
-          }
-
-          if (isValid) {
-               setActiveStep((prev) => prev + 1);
-               setProgress(progress + 50);
-               setTitleStep((prev) => prev + 1);
-          }
-     };
-
-     const handleBack = () => {
-          setActiveStep((prev) => prev - 1);
-          setProgress(progress - 50);
-          setTitleStep((prev) => prev - 1);
-     };
-
-     const handleFinish = (data: any) => {
-          const dataToSave = {
-               ...data,
-               status: data.status ? 'Ativo' : 'Inativo',
-          };
-          alert('Cadastro concluído!\n' + JSON.stringify(dataToSave, null, 2));
-          reset();
-          createUser(dataToSave);
-          getEmployees();
-          props.onClick();
-     };
-
-     // Método que reseta todas as variaveis
-     const reset = () => {
-          setActiveStep(0);
-          setProgress(0);
-          setTitleStep(0);
-          formData.reset();
+     // Função intermediária para passar o trigger do form ao handleNext do hook
+     const onNextClick = () => {
+          handleNext(formData.trigger);
      };
 
      const renderStep = () => {
@@ -128,7 +99,7 @@ export default function FormContext(props: {
                          activeStep={activeStep}
                          steps={dataGuideSteps}
                          onBack={handleBack}
-                         onNext={handleNext}
+                         onNext={onNextClick} // <-- Aqui passa a função intermediária
                          onSubmit={formData.handleSubmit(handleFinish)}
                     />
                </Container>
