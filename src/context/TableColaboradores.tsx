@@ -65,12 +65,20 @@ export default function TableEmployee(): ReactElement {
                                              fontSize: 14,
                                              lineHeight: '24px',
                                         }}
+                                        align={
+                                             el.title === 'Status'
+                                                  ? 'right'
+                                                  : 'left'
+                                        }
                                         key={el.index}>
                                         <Stack
                                              sx={{
                                                   display: 'flex',
                                                   flexDirection: 'row',
-                                                  justifyContent: 'flex-start',
+                                                  justifyContent:
+                                                       el.title === 'Status'
+                                                            ? 'flex-end'
+                                                            : 'flex-start',
                                                   alignItems: 'center',
                                                   columnGap: 1,
                                              }}>
