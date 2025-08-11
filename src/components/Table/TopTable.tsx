@@ -1,3 +1,4 @@
+import {dataHeader} from '@data/dataHeader';
 import {Box, Button, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 
@@ -23,7 +24,7 @@ export default function TopTable(props: {
                          color: 'text.primary',
                          display: {xs: 'none', lg: 'inline'},
                     }}>
-                    Colaboradores
+                    {dataHeader.titleSection}
                </Typography>
                <Button
                     sx={{
@@ -38,7 +39,7 @@ export default function TopTable(props: {
                     <Typography
                          fontWeight={700}
                          fontSize={{xs: '0.75rem', lg: '1rem'}}>
-                         Novo Colaborador
+                         {dataHeader.buttonTitle}
                     </Typography>
                </Button>
           </Box>
