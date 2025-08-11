@@ -1,3 +1,4 @@
+import {containerButtonsData} from '@data/containerButtonsData';
 import {Box, Button} from '@mui/material';
 import type {ReactElement} from 'react';
 
@@ -21,14 +22,14 @@ export default function ContainerButtons(props: {
                     onClick={props.onBack}
                     variant="text"
                     sx={{color: 'text.secondary'}}>
-                    Voltar
+                    {containerButtonsData.backButton}
                </Button>
                {props.activeStep < props.steps.length - 1 && (
                     <Button
                          type="button"
                          onClick={props.onNext}
                          variant="contained">
-                         Próximo
+                         {containerButtonsData.nextButton}
                     </Button>
                )}
                {props.activeStep === props.steps.length - 1 && (
@@ -37,7 +38,7 @@ export default function ContainerButtons(props: {
                          onClick={props.onSubmit}
                          variant="contained"
                          color="primary">
-                         Concluir
+                         {containerButtonsData.finishButton}
                     </Button>
                )}
           </Box>
