@@ -1,6 +1,7 @@
 import {Breadcrumbs, Link, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 import CircleIcon from '@mui/icons-material/Circle';
+import {dataHeader} from '@data/dataHeader';
 
 export default function HeaderForm(props: {onClick: () => void}): ReactElement {
      return (
@@ -14,12 +15,14 @@ export default function HeaderForm(props: {onClick: () => void}): ReactElement {
                }
                aria-label="breadcrumb">
                <Link href="" underline="none" onClick={props.onClick}>
-                    <Typography color="text.primary">Colaboradores</Typography>
+                    <Typography color="text.primary">
+                         {dataHeader.titleSection}
+                    </Typography>
                </Link>
 
                <Link underline="none">
                     <Typography color="text.secondary">
-                         Cadastrar coladoradores
+                         {dataHeader.buttonTitle}
                     </Typography>
                </Link>
           </Breadcrumbs>
