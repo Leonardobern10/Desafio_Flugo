@@ -15,7 +15,6 @@ function App() {
                     flexDirection: 'row',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    border: 2,
                }}>
                <SideBar />
                <Grid
