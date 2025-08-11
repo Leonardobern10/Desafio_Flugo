@@ -7,10 +7,10 @@ import {useState} from 'react';
 import {dataBasicSelect} from '@data/dataBasicSelect';
 
 export default function BasicSelect() {
-     const [age, setAge] = useState<string>('');
+     const [departament, setDepartament] = useState<string>('');
 
      const handleChange = (event: SelectChangeEvent) => {
-          setAge(event.target.value as string);
+          setDepartament(event.target.value as string);
      };
 
      return (
@@ -21,8 +21,8 @@ export default function BasicSelect() {
                     </InputLabel>
                     <Select
                          labelId="demo-simple-select-label"
-                         id="demo-simple-select"
-                         value={age}
+                         id="departament-simple-select"
+                         value={departament}
                          label="Selecione um departamento"
                          onChange={handleChange}>
                          {dataBasicSelect.allDepartaments.map((el) => (
