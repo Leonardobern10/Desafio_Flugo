@@ -1,7 +1,7 @@
 import {Avatar, Box, Grid, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import {dataSidebar} from '@data/dataSideBar';
+import {dataSidebar} from '@data/dataSidebar';
 
 export default function SideBar(): ReactElement {
      return (

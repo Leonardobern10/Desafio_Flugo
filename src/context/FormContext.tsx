@@ -16,13 +16,10 @@ export default function FormContext(props: {
 }): ReactElement {
      // Gerencia o progresso no processo de cadastro
      const [progress, setProgress] = useState<number>(0);
-
      // Gerencia o titulo a ser exibido no step
      const [titleStep, setTitleStep] = useState<number>(0);
-
      // Gerencia a etapa atual no cadastro
      const [activeStep, setActiveStep] = useState<number>(0);
-
      const formData = useForm<EmployerFormDataType>({
           defaultValues: {
                titulo: '',
