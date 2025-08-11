@@ -2,6 +2,7 @@ import SmallTableCell from '@components/Table/SmallTableCell';
 import {TableRow} from '@mui/material';
 import type {EmployerFormDataType} from 'types/EmployerFormDataType';
 import StatusTableCell from './StatusTableCell';
+import TitleTableCell from './TitleTableCell';
 
 export default function EmployeeRow({
      employee,
@@ -12,7 +13,7 @@ export default function EmployeeRow({
 
      return (
           <TableRow>
-               <SmallTableCell data={titulo} />
+               <TitleTableCell data={titulo} />
                <SmallTableCell data={email} />
                <SmallTableCell data={departamento} />
                <StatusTableCell data={status} />
