@@ -1,4 +1,4 @@
-import {dataHeader} from '@data/dataHeader';
+import {dataTopTable} from '@data/dataTopTable';
 import {Box, Button, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 
@@ -24,14 +24,14 @@ export default function TopTable(props: {
                          color: 'text.primary',
                          display: {xs: 'none', lg: 'inline'},
                     }}>
-                    {dataHeader.titleSection}
+                    {dataTopTable.titleSection}
                </Typography>
                <Button
                     sx={{
                          color: '#fff',
                          borderRadius: 2,
                          paddingY: {xs: 1, lg: 1.5},
-                         paddingX: {xs: 2, lg: 4},
+                         paddingX: {xs: 2, lg: 2},
                     }}
                     onClick={handleClick}
                     variant="contained"
@@ -39,7 +39,7 @@ export default function TopTable(props: {
                     <Typography
                          fontWeight={700}
                          fontSize={{xs: '0.75rem', lg: '1rem'}}>
-                         {dataHeader.buttonTitle}
+                         {dataTopTable.buttonTitle}
                     </Typography>
                </Button>
           </Box>
