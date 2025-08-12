@@ -40,7 +40,6 @@ export function useFormSteps({
                ...data,
                status: data.status ? 'Ativo' : 'Inativo',
           };
-          alert('Cadastro concluído!\n' + JSON.stringify(dataToSave, null, 2));
           createUser(dataToSave);
           getEmployees();
           onClick();
