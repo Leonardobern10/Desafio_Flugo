@@ -4,6 +4,15 @@ import type {EmployerFormDataType} from 'types/EmployerFormDataType';
 import randomAvatarGenerate from './randomAvatarGenerate';
 import {toast} from 'react-toastify';
 
+/**
+ * Busca todos os funcionários da coleção "employees" no Firestore.
+ *
+ * @async
+ * @function getEmployees
+ * @returns {Promise<EmployerFormDataType[]>} Uma promise que resolve
+ * com o array de funcionários.
+ * Em caso de erro, exibe uma notificação de erro e retorna um array vazio.
+ */
 export async function getEmployees(): Promise<EmployerFormDataType[]> {
      try {
           // Referência para a coleção "employees"
@@ -24,6 +33,17 @@ export async function getEmployees(): Promise<EmployerFormDataType[]> {
      }
 }
 
+/**
+ * Cria um novo funcionário na coleção "employees" do Firestore.
+ *
+ * @async
+ * @function createUser
+ * @param {EmployerFormDataType} employeeData - Dados do funcionário a serem salvos.
+ * @returns {Promise<void>} Uma promise que resolve quando a criação
+ * for concluída.
+ * Em caso de sucesso, exibe notificação de sucesso;
+ * em caso de erro, exibe notificação de erro.
+ */
 export async function createUser(
      employeeData: EmployerFormDataType
 ): Promise<void> {

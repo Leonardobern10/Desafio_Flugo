@@ -3,6 +3,16 @@ import type {ReactElement} from 'react';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {dataSidebar} from '@data/dataSidebar';
 
+/**
+ * Componente SideBar que exibe um painel lateral contendo:
+ * - Avatar arredondado
+ * - Título extraído dos dados de sidebar
+ * - Ícone de seta para indicar navegação ou ação
+ *
+ * Usado para navegação ou agrupamento de opções no layout lateral.
+ *
+ * @returns JSX.Element representando a sidebar.
+ */
 export default function SideBar(): ReactElement {
      return (
           <Grid

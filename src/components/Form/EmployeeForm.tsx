@@ -16,6 +16,19 @@ import {
 } from '@validations/employeeSchema';
 import {useFormSteps} from '@hooks/useFomSteps'; // corrigir nome do arquivo aqui!
 
+/**
+ * Componente de formulário multi-etapas para cadastro de funcionário.
+ *
+ * Funcionalidades:
+ * - Gerencia os passos do formulário usando hook personalizado `useFormSteps`
+ * - Validação integrada com react-hook-form e Zod
+ * - Exibe progresso visual via componente ProgressForm
+ * - Navegação entre passos controlada com botões e passos guiados (GuideSteps)
+ * - Integra com serviços externos `createUser` e `getEmployees`
+ *
+ * @param props.onClick Função chamada para fechar ou cancelar o formulário
+ * @returns JSX.Element com o formulário completo para cadastro de funcionário
+ */
 export default function EmployeeForm(props: {
      onClick: () => void;
 }): ReactElement {

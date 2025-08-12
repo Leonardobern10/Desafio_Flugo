@@ -5,6 +5,18 @@ import type {ReactElement} from 'react';
 import {useFormContext} from 'react-hook-form';
 import type {EmployeeSchemaType} from '@validations/employeeSchema';
 
+/**
+ * Componente do segundo passo do formulário de cadastro.
+ * Renderiza um campo select para escolha do departamento,
+ * integrado ao react-hook-form.
+ * O campo exibe mensagens de erro baseadas na validação do
+ * esquema.
+ *
+ * Utiliza os dados de departamentos do arquivo dataAllDepartaments
+ * para popular as opções do select.
+ *
+ * @returns JSX.Element com o campo de seleção do departamento.
+ */
 export default function Step2Form(): ReactElement {
      const {
           register,

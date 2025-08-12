@@ -2,6 +2,19 @@ import {Box, TableCell, Typography} from '@mui/material';
 import type {TableCellType} from 'types/TableCellType';
 import {type ReactElement} from 'react';
 
+/**
+ * Componente StatusTableCell renderiza uma célula de tabela
+ * alinhada à direita que exibe um status com estilos condicionais.
+ *
+ * O fundo e a cor do texto mudam conforme o valor da propriedade `text`:
+ * - "Ativo": verde claro de fundo com texto verde escuro
+ * - "Inativo": vermelho claro de fundo com texto vermelho escuro
+ *
+ * @param {TableCellType} props - Propriedades do componente
+ * @param {string} props.text - Texto do status a ser exibido
+ *
+ * @returns {ReactElement} Célula da tabela com o status estilizado
+ */
 export default function StatusTableCell({text}: TableCellType): ReactElement {
      return (
           <TableCell align="right">

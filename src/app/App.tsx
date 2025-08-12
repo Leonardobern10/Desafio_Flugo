@@ -5,6 +5,19 @@ import MainContent from '../components/MainContent';
 import Header from '@components/Header';
 import {ToastContainer} from 'react-toastify';
 
+/**
+ * Componente principal da aplicação que organiza a estrutura geral da interface.
+ *
+ * Renderiza:
+ * - Header: barra superior da aplicação
+ * - SideBar: menu lateral de navegação
+ * - MainContent: conteúdo principal
+ * - ToastContainer: container para exibir notificações (React-Toastify)
+ *
+ * Usa o MUI Box e Grid para layout responsivo e estilização.
+ *
+ * @returns JSX.Element com a estrutura principal do app
+ */
 function App() {
      return (
           <Box

@@ -16,6 +16,21 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import useLoadingEmployees from '@hooks/useLoadingEmployees';
 import EmployeeRow from './EmployeeRow';
 
+/**
+ * Componente TableEmployee exibe uma tabela com os dados dos funcionários.
+ *
+ * Utiliza o hook useLoadingEmployees para obter:
+ * - employees: lista de funcionários
+ * - loading: indicador de carregamento
+ * - error: erro ao buscar dados
+ *
+ * Renderiza:
+ * - Spinner enquanto estiver carregando
+ * - Mensagem de erro caso ocorra falha
+ * - Tabela com cabeçalho e linhas (EmployeeRow) para os dados carregados
+ *
+ * @returns JSX.Element com a tabela, spinner ou mensagem de erro
+ */
 export default function TableEmployee(): ReactElement {
      const {employees, loading, error} = useLoadingEmployees();
 

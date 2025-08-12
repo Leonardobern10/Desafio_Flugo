@@ -3,6 +3,20 @@ import {Controller, useFormContext} from 'react-hook-form';
 import {Box, TextField} from '@mui/material';
 import ControlledSwitch from '@components/ControlledSwitch';
 
+/**
+ * Componente do primeiro passo do formulário de cadastro.
+ * Renderiza campos controlados para título, email e um switch
+ * para ativar/desativar o status.
+ * Utiliza react-hook-form para registro e controle dos campos,
+ * além de exibir mensagens de erro.
+ *
+ * Os campos gerenciados são:
+ * - titulo: texto simples
+ * - email: texto para email
+ * - status: booleano via ControlledSwitch
+ *
+ * @returns JSX.Element com os campos do passo 1 do formulário.
+ */
 export default function Step1Form(): ReactElement {
      const {
           register,

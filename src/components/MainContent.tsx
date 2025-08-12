@@ -4,6 +4,18 @@ import TableEmployee from './Table/EmployeeTable';
 import EmployeeForm from './Form/EmployeeForm';
 import TopTable from './Table/TopTable';
 
+/**
+ * Componente principal da área de conteúdo.
+ * Controla a exibição entre o formulário de cadastro de
+ * funcionário e a tabela de funcionários.
+ *
+ * O estado `showStepper` define qual componente será exibido:
+ * - true: exibe o formulário de cadastro (`EmployeeForm`)
+ * - false: exibe a tabela de funcionários com o cabeçalho
+ * (`TopTable` + `TableEmployee`)
+ *
+ * @returns {ReactElement} Componente principal com conteúdo dinâmico.
+ */
 export default function MainContent(): ReactElement {
      const [showStepper, setShowStepper] = useState(false);
 

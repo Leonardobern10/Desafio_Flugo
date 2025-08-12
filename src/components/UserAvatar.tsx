@@ -2,6 +2,11 @@ import type {ReactElement} from 'react';
 import {Avatar} from '@mui/material';
 import avatar1 from '@images/avatar1.png';
 
+/**
+ * Componente que exibe o avatar do usuário com uma imagem fixa.
+ *
+ * @returns {ReactElement} Avatar do usuário.
+ */
 export default function UserAvatar(): ReactElement {
      return (
           <Avatar

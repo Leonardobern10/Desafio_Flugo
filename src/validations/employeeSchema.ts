@@ -1,5 +1,14 @@
 import {z} from 'zod';
 
+/**
+ * Esquema de validação para os dados do funcionário.
+ *
+ * Valida as propriedades:
+ * - titulo: string com mínimo 2 e máximo 50 caracteres, sem espaços em branco nas extremidades.
+ * - email: string no formato de email válido, com máximo de 100 caracteres.
+ * - departamento: string não vazia, sem espaços em branco nas extremidades.
+ * - status: booleano que representa se o funcionário está ativo (true) ou não (false).
+ */
 export const employeeSchema = z.object({
      titulo: z
           .string()

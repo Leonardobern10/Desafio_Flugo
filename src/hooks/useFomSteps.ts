@@ -2,6 +2,30 @@ import type {UseFormStepsType} from '../types/UseFormStepsType';
 import {useState} from 'react';
 import type {EmployeeSchemaType} from '@validations/employeeSchema';
 
+/**
+ * Hook para controlar o estado e a navegação de um formulário multi-etapas.
+ * Gerencia o progresso, passo ativo e ações de avançar, voltar e finalizar o
+ * formulário.
+ *
+ * @param {UseFormStepsType} params - Objetos e funções para criar usuário,
+ * atualizar lista e callback.
+ * @param {(data: EmployeeSchemaType) => void} params.createUser - Função para
+ * criar usuário com os dados do formulário.
+ * @param {() => void} params.getEmployees - Função para atualizar a lista de
+ * funcionários após criação.
+ * @param {() => void} params.onClick - Callback para executar após finalizar
+ * o formulário (ex: fechar formulário).
+ *
+ * @returns {{
+ *   progress: number;
+ *   titleStep: number;
+ *   activeStep: number;
+ *   handleNext: (trigger: (fields?: (keyof EmployeeSchemaType)[]) => Promise<boolean>) => Promise<void>;
+ *   handleBack: () => void;
+ *   handleFinish: (data: EmployeeSchemaType) => void;
+ *   reset: () => void;
+ * }}
+ */
 export function useFormSteps({
      createUser,
      getEmployees,

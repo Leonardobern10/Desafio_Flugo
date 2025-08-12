@@ -3,6 +3,18 @@ import {Box, Button} from '@mui/material';
 import type {ContainerButtonsType} from 'types/ContainerButtonsType';
 import type {ReactElement} from 'react';
 
+/**
+ * Componente de botões para navegação em formulários multi-step.
+ * Renderiza botões "Voltar", "Próximo" e "Finalizar" dependendo
+ * do passo ativo.
+ *
+ * @param {number} activeStep - Passo atual do formulário
+ * @param {Array} steps - Lista de passos para controle da navegação
+ * @param {() => void} onBack - Função chamada ao clicar no botão "Voltar"
+ * @param {() => void} onNext - Função chamada ao clicar no botão "Próximo"
+ * @param {() => void} onSubmit - Função chamada ao clicar no botão "Finalizar"
+ * @returns {ReactElement} JSX com botões de navegação
+ */
 export default function ContainerButtons({
      activeStep,
      steps,

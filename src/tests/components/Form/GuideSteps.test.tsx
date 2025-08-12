@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import isMobile from '@services/isMobile';
+import useIsMobile from '@services/isMobile';
 import {afterEach, describe, expect, it, vi} from 'vitest';
 import GuideSteps from '@components/Form/GuideSteps';
 
@@ -17,7 +17,7 @@ describe('GuideSteps', () => {
      });
 
      it('deve renderizar todos os passos fornecidos', () => {
-          (isMobile as vi.Mock).mockReturnValue(false);
+          (useIsMobile as vi.Mock).mockReturnValue(false);
 
           render(<GuideSteps activeStep={0} steps={stepsMock} />);
 
@@ -27,7 +27,7 @@ describe('GuideSteps', () => {
      });
 
      it('deve aplicar orientação vertical quando não for mobile', () => {
-          (isMobile as vi.Mock).mockReturnValue(false);
+          (useIsMobile as vi.Mock).mockReturnValue(false);
 
           const {container} = render(
                <GuideSteps activeStep={1} steps={stepsMock} />
@@ -38,7 +38,7 @@ describe('GuideSteps', () => {
      });
 
      it('deve aplicar orientação horizontal quando for mobile', () => {
-          (isMobile as vi.Mock).mockReturnValue(true);
+          (useIsMobile as vi.Mock).mockReturnValue(true);
 
           const {container} = render(
                <GuideSteps activeStep={1} steps={stepsMock} />
@@ -50,7 +50,7 @@ describe('GuideSteps', () => {
      });
 
      it('deve ajustar o rowGap conforme activeStep via snapshot', () => {
-          (isMobile as vi.Mock).mockReturnValue(false);
+          (useIsMobile as vi.Mock).mockReturnValue(false);
 
           const {container, rerender} = render(
                <GuideSteps activeStep={0} steps={stepsMock} />

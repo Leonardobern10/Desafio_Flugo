@@ -2,6 +2,18 @@ import {dataTopTable} from '@data/dataTopTable';
 import {Box, Button, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 
+/**
+ * Componente TopTable que exibe um título e um botão para
+ * disparar uma ação, geralmente para exibir um stepper.
+ *
+ * @param {Object} props - Propriedades do componente
+ * @param {(showStepper: boolean) => void} props.onClick -
+ * Callback executado ao clicar no botão, recebe um boolean
+ * para indicar exibição do stepper
+ *
+ * @returns {ReactElement} Componente visual contendo título
+ * e botão estilizados
+ */
 export default function TopTable(props: {
      onClick: (showStepper: boolean) => void;
 }): ReactElement {
