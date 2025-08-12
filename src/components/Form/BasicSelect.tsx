@@ -3,10 +3,10 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, {type SelectChangeEvent} from '@mui/material/Select';
-import {useState} from 'react';
+import {useState, type ReactElement} from 'react';
 import {dataBasicSelect} from '@data/dataBasicSelect';
 
-export default function BasicSelect() {
+export default function BasicSelect(): ReactElement {
      const [departament, setDepartament] = useState<string>('');
 
      const handleChange = (event: SelectChangeEvent) => {

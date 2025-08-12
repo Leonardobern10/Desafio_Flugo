@@ -1,23 +1,23 @@
 import {Step, StepLabel, Stepper, Typography} from '@mui/material';
-import type {GuideStepsType} from 'types/GuideStepsType';
 import type {ReactElement} from 'react';
+import type {GuideStepsProps} from '../../types/GuideStepsProps';
 
-export default function GuideSteps(props: {
-     activeStep: number;
-     steps: Array<GuideStepsType>;
-}): ReactElement {
+export default function GuideSteps({
+     activeStep,
+     steps,
+}: GuideStepsProps): ReactElement {
      return (
           <Stepper
-               activeStep={props.activeStep}
+               activeStep={activeStep}
                orientation="vertical" // ou 'horizontal' se preferir
                connector={null}
                sx={{
                     minWidth: 170,
                     display: 'flex',
                     flexDirection: 'column',
-                    rowGap: props.activeStep === 1 ? 0 : 10,
+                    rowGap: activeStep === 1 ? 0 : 10,
                }}>
-               {props.steps.map((label) => (
+               {steps.map((label) => (
                     <Step key={label.step}>
                          <StepLabel>
                               <Typography fontSize="13px">

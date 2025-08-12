@@ -1,9 +1,9 @@
-import {allDepartaments} from '@data/allDepartaments';
+import {dataAllDepartaments} from '@data/dataAllDepartaments';
 import {Box, MenuItem, TextField} from '@mui/material';
 
 import type {ReactElement} from 'react';
 import {useFormContext} from 'react-hook-form';
-import type {EmployeeSchemaType} from '../../validations/employeeSchema';
+import type {EmployeeSchemaType} from '@validations/employeeSchema';
 
 export default function Step2Form(): ReactElement {
      const {
@@ -26,7 +26,7 @@ export default function Step2Form(): ReactElement {
                     {...register('departamento')}
                     error={!!errors.departamento}
                     helperText={errors.departamento?.message?.toString()}>
-                    {allDepartaments.map((option) => (
+                    {dataAllDepartaments.map((option) => (
                          <MenuItem
                               key={option.index}
                               value={option.departament}>

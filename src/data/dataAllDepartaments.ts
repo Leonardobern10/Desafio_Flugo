@@ -1,7 +1,7 @@
 import {Departaments} from '../types/Departaments';
 import type {DepartamentsType} from '../types/DepartamentsType';
 
-export const allDepartaments: Array<DepartamentsType> = [
+export const dataAllDepartaments: Array<DepartamentsType> = [
      {
           index: 0,
           departament: Departaments.DESIGN,
