@@ -2,6 +2,7 @@ import {addDoc, collection, getDocs} from 'firebase/firestore';
 import {db} from './firebase';
 import type {EmployerFormDataType} from 'types/EmployerFormDataType';
 import randomAvatarGenerate from './randomAvatarGenerate';
+import {toast} from 'react-toastify';
 
 export async function getEmployees(): Promise<EmployerFormDataType[]> {
      try {
@@ -18,7 +19,7 @@ export async function getEmployees(): Promise<EmployerFormDataType[]> {
                avatar: el.get('avatar') || '',
           }));
      } catch (error) {
-          console.error('Erro ao buscar funcionários:', error);
+          toast.error('Erro ao buscar colaboradores!');
           return [];
      }
 }
@@ -27,15 +28,15 @@ export async function createUser(
      employeeData: EmployerFormDataType
 ): Promise<void> {
      try {
-          const docRef = await addDoc(collection(db, 'employees'), {
+          await addDoc(collection(db, 'employees'), {
                titulo: employeeData.titulo,
                email: employeeData.email,
                departamento: employeeData.departamento,
                status: employeeData.status,
                avatar: randomAvatarGenerate(),
           });
-          console.log('Document criado:', docRef.id);
+          toast.success('Cadastro realizado!');
      } catch (error) {
-          console.error('Erro ao criar documento: ', error);
+          toast.error('Erro ao cadastrar colaborador!');
      }
 }
