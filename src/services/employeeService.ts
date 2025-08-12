@@ -37,7 +37,5 @@ export async function createUser(
           console.log('Document criado:', docRef.id);
      } catch (error) {
           console.error('Erro ao criar documento: ', error);
-     } finally {
-          console.log('Encerrando processo de criação de documento');
      }
 }
