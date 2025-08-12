@@ -8,8 +8,9 @@ export default function ProgressForm(props: {progress: number}): ReactElement {
                     width: '100%',
                     display: 'flex',
                     flexDirection: 'row',
-                    justifyContent: 'space-between',
+                    justifyContent: 'flex-start',
                     alignItems: 'center',
+                    columnGap: 1.5,
                     marginY: 2,
                }}>
                <LinearProgress

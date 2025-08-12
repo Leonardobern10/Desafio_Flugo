@@ -58,7 +58,7 @@ export default function FormContext(props: {
      };
 
      return (
-          <Box>
+          <Box sx={{paddingRight: 4}}>
                <HeaderForm onClick={props.onClick} />
                <ProgressForm progress={progress} />
                <Container maxWidth="xl" sx={{mt: 4}}>
