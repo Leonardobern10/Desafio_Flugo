@@ -1,11 +1,11 @@
 import {type ReactElement} from 'react';
 import {Box, Container, Typography} from '@mui/material';
 import {FormProvider, useForm} from 'react-hook-form';
-import ProgressForm from '../components/ProgressForm';
-import GuideSteps from '../components/Form/GuideSteps';
-import ContainerButtons from '../components/ContainerButtons';
+import ProgressForm from '@components/ProgressForm';
+import GuideSteps from './GuideSteps';
+import ContainerButtons from '../ContainerButtons';
 import HeaderForm from '@components/Form/HeaderForm';
-import {createUser, getEmployees} from '../services/employeeService';
+import {createUser, getEmployees} from '../../services/employeeService';
 import Step1Form from '@components/Form/Step1Form';
 import Step2Form from '@components/Form/Step2Form';
 import {dataGuideSteps} from '@data/dataGuideSteps';
@@ -13,8 +13,8 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {
      employeeSchema,
      type EmployeeSchemaType,
-} from '../validations/employeeSchema';
-import {useFormSteps} from '../hooks/useFomSteps'; // corrigir nome do arquivo aqui!
+} from '../../validations/employeeSchema';
+import {useFormSteps} from '../../hooks/useFomSteps'; // corrigir nome do arquivo aqui!
 
 export default function FormContext(props: {
      onClick: () => void;

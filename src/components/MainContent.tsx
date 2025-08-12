@@ -1,7 +1,7 @@
 import {Box} from '@mui/material';
 import {useState, type ReactElement} from 'react';
-import TableEmployee from '../context/TableColaboradores';
-import FormContext from '../context/FormContext';
+import TableEmployee from './Table/EmployeeTable';
+import FormContext from './Form/EmployeeForm';
 import TopTable from './Table/TopTable';
 
 export default function MainContent(): ReactElement {
