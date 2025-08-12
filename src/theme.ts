@@ -50,9 +50,28 @@ const theme = createTheme({
                          lineHeight: '26px',
                          letterSpacing: 0,
                          paddingY: 2,
+                         '& .MuiOutlinedInput-root': {
+                              borderRadius: 8, // arredondado padrão do theme.shape.borderRadius
+                         },
                     },
                },
                defaultProps: {},
+          },
+          MuiSelect: {
+               styleOverrides: {
+                    root: {
+                         borderRadius: 8,
+                    },
+               },
+          },
+          MuiTextField: {
+               styleOverrides: {
+                    root: {
+                         '& .MuiOutlinedInput-root': {
+                              borderRadius: 8, // arredondado padrão do theme.shape.borderRadius
+                         },
+                    },
+               },
           },
      },
 });

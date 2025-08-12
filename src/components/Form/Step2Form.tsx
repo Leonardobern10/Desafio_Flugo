@@ -20,7 +20,7 @@ export default function Step2Form(): ReactElement {
                }}>
                <TextField
                     size="medium"
-                    variant="standard"
+                    variant="outlined"
                     select
                     label="Selecione um departamento"
                     {...register('departamento')}

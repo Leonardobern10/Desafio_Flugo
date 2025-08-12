@@ -13,11 +13,6 @@ export default function Step1Form(): ReactElement {
      return (
           <Box sx={{display: 'flex', flexDirection: 'column', gap: 2}}>
                <TextField
-                    sx={{
-                         '& .MuiOutlinedInput-root': {
-                              borderRadius: '8px', // mais arredondado
-                         },
-                    }}
                     label="Titulo"
                     {...register('titulo')}
                     placeholder="e.g. João Silva"
@@ -27,15 +22,11 @@ export default function Step1Form(): ReactElement {
                />
 
                <TextField
-                    sx={{
-                         '& .MuiOutlinedInput-root': {
-                              borderRadius: '8px', // mais arredondado
-                         },
-                    }}
-                    size="medium"
+                    id="titulo-input"
                     label="Email"
-                    placeholder="e.g. john@gmail.com"
                     {...register('email')}
+                    placeholder="e.g. john@gmail.com"
+                    size="medium"
                     error={!!errors.email}
                     helperText={errors.email?.message?.toString()}
                />

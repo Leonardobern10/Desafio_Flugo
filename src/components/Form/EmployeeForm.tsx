@@ -73,7 +73,7 @@ export default function FormContext(props: {
                               display: 'flex',
                               flexDirection: {xs: 'column', lg: 'row'},
                               justifyContent: 'space-between',
-                              alignItems: 'center',
+                              alignItems: 'flex-start',
                          }}>
                          {/* Stepper */}
                          <GuideSteps
