@@ -11,9 +11,9 @@ import {
      Typography,
 } from '@mui/material';
 import type {ReactElement} from 'react';
-import {headerTableDatas} from '../../data/dataTable';
+import {headerTableDatas} from '@data/dataTable';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import useLoadingEmployees from '../../hooks/useLoadingEmployees';
+import useLoadingEmployees from '@hooks/useLoadingEmployees';
 import EmployeeRow from './EmployeeRow';
 
 export default function TableEmployee(): ReactElement {

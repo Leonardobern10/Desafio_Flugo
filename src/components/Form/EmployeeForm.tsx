@@ -13,8 +13,8 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {
      employeeSchema,
      type EmployeeSchemaType,
-} from '../../validations/employeeSchema';
-import {useFormSteps} from '../../hooks/useFomSteps'; // corrigir nome do arquivo aqui!
+} from '@validations/employeeSchema';
+import {useFormSteps} from '@hooks/useFomSteps'; // corrigir nome do arquivo aqui!
 
 export default function FormContext(props: {
      onClick: () => void;

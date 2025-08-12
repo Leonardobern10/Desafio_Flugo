@@ -1,6 +1,6 @@
 import type {UseFormStepsType} from '../types/UseFormStepsType';
 import {useState} from 'react';
-import type {EmployeeSchemaType} from 'validations/employeeSchema';
+import type {EmployeeSchemaType} from '@validations/employeeSchema';
 
 export function useFormSteps({
      createUser,

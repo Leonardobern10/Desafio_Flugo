@@ -1,6 +1,6 @@
 import {Step, StepLabel, Stepper, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
-import type {GuideStepsProps} from '../../types/GuideStepsProps';
+import type {GuideStepsProps} from 'types/GuideStepsProps';
 
 export default function GuideSteps({
      activeStep,

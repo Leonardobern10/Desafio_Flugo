@@ -1,8 +1,6 @@
-// src/services/firebase.ts
 import {initializeApp, getApps, type FirebaseApp} from 'firebase/app';
 import {getFirestore} from 'firebase/firestore';
 
-// Pegue essas infos do console Firebase (passo anterior)
 const firebaseConfig = {
      apiKey: import.meta.env.VITE_API_KEY,
      authDomain: import.meta.env.VITE_AUTH_DOMAIN,
@@ -22,5 +20,4 @@ if (!getApps().length) {
      console.log('ℹ️ Firebase já estava inicializado.');
 }
 
-// Exporta o Firestore
 export const db = getFirestore(firebaseApp);

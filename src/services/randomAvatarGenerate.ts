@@ -11,6 +11,5 @@ const randomNumber = (): number => {
 
 export default function randomAvatarGenerate(): string {
      let index: number = randomNumber();
-     console.log(avatars[index]);
      return avatars[index];
 }
