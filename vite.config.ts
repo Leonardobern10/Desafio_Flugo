@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
@@ -15,5 +17,15 @@ export default defineConfig({
                '@validations': path.resolve(__dirname, 'src/validations'),
                '@hooks': path.resolve(__dirname, 'src/hooks'),
           },
+     },
+     test: {
+          globals: true, // para usar globals como describe, test, expect sem importá-los
+          environment: 'jsdom', // ambiente que simula navegador para React
+          setupFiles: './src/setupTests.ts', // arquivo de setup (criaremos a seguir)
+          include: ['src/tests/**/*.test.ts', 'src/tests/**/*.test.tsx'], // adiciona isso para buscar os testes nessa pasta,
+          coverage: {
+               reporter: ['text', 'lcov'], // relatórios de cobertura
+          },
+          // opcional para ignorar CSS em testes
      },
 });
