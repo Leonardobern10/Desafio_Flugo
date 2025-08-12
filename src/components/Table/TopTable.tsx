@@ -11,6 +11,7 @@ export default function TopTable(props: {
 
      return (
           <Box
+               data-testId="top-table"
                sx={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -27,6 +28,7 @@ export default function TopTable(props: {
                     {dataTopTable.titleSection}
                </Typography>
                <Button
+                    data-testId="top-table-button"
                     sx={{
                          color: '#fff',
                          borderRadius: 2,

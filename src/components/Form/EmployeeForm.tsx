@@ -16,7 +16,7 @@ import {
 } from '@validations/employeeSchema';
 import {useFormSteps} from '@hooks/useFomSteps'; // corrigir nome do arquivo aqui!
 
-export default function FormContext(props: {
+export default function EmployeeForm(props: {
      onClick: () => void;
 }): ReactElement {
      const formData = useForm<EmployeeSchemaType>({
@@ -59,6 +59,7 @@ export default function FormContext(props: {
 
      return (
           <Box
+               data-testId="employee-form"
                sx={{
                     paddingRight: {xs: 0, lg: 4},
                }}>

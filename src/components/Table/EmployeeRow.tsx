@@ -12,7 +12,7 @@ export default function EmployeeRow({
      const {titulo, email, departamento, status, avatar} = employee;
 
      return (
-          <TableRow>
+          <TableRow data-testId="table-row">
                <TitleTableCell avatar={avatar} text={titulo} />
                <SmallTableCell text={email} />
                <SmallTableCell text={departamento} />

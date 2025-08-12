@@ -9,6 +9,7 @@ export default function TitleTableCell({
      return (
           <TableCell align="left">
                <Box
+                    data-testId="title-table-cell"
                     sx={{
                          display: 'flex',
                          flexDirection: 'row',
