@@ -37,13 +37,11 @@ export default function FormContext(props: {
           handleBack,
           handleFinish,
      } = useFormSteps({
-          // onSubmit não está sendo usado, pode remover do hook se quiser
           createUser,
           getEmployees,
           onClick: props.onClick,
      });
 
-     // Função intermediária para passar o trigger do form ao handleNext do hook
      const onNextClick = () => {
           handleNext(formData.trigger);
      };
