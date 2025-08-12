@@ -1,7 +1,7 @@
 import {Box} from '@mui/material';
 import {useState, type ReactElement} from 'react';
 import TableEmployee from './Table/EmployeeTable';
-import FormContext from './Form/EmployeeForm';
+import EmployeeForm from './Form/EmployeeForm';
 import TopTable from './Table/TopTable';
 
 export default function MainContent(): ReactElement {
@@ -19,7 +19,7 @@ export default function MainContent(): ReactElement {
                     alignItems: 'stretch',
                }}>
                {showStepper ? (
-                    <FormContext onClick={() => setShowStepper(false)} />
+                    <EmployeeForm onClick={() => setShowStepper(false)} />
                ) : (
                     <Box
                          sx={{
