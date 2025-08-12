@@ -29,7 +29,9 @@
                "@services/*": ["services/*"],
                "@data/*": ["data/*"],
                "@types/*": ["types/*"],
-               "@images/*": ["assets/images/*"]
+               "@images/*": ["assets/images/*"],
+               "@validations/*": ["validations/*"],
+               "@hooks/*": ["hooks/*"]
           }
      },
      "include": ["src"]

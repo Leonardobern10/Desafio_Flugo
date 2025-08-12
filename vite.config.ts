@@ -12,6 +12,8 @@ export default defineConfig({
                '@data': path.resolve(__dirname, 'src/data'),
                '@images': path.resolve(__dirname, 'src/assets/images'),
                '@types': path.resolve(__dirname, 'src/types'),
+               '@validations': path.resolve(__dirname, 'src/validations'),
+               '@hooks': path.resolve(__dirname, 'src/hooks'),
           },
      },
 });
