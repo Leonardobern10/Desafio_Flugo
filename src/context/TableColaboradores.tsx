@@ -10,28 +10,14 @@ import {
      TableRow,
      Typography,
 } from '@mui/material';
-import {useEffect, useState, type ReactElement} from 'react';
+import type {ReactElement} from 'react';
 import {headerTableDatas} from '../data/tableData';
-import type {EmployerFormDataType} from 'types/EmployerFormDataType';
-import {getEmployees} from '@services/employeeService';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import EmployeeRow from '@components/Table/EmployeeRow';
+import useLoadingEmployees from '../hooks/useLoadingEmployees';
 
 export default function TableEmployee(): ReactElement {
-     const [employees, setEmployees] = useState<EmployerFormDataType[]>([]);
-     const [loading, setLoading] = useState(true);
-
-     useEffect(() => {
-          const fetchEmployees = async () => {
-               try {
-                    const data = await getEmployees();
-                    setEmployees(data);
-               } finally {
-                    setLoading(false);
-               }
-          };
-          fetchEmployees();
-     }, []);
+     const {employees, loading, error} = useLoadingEmployees();
 
      if (loading) {
           return (
@@ -43,6 +29,16 @@ export default function TableEmployee(): ReactElement {
                          height: '200px', // altura para centralizar spinner
                     }}>
                     <CircularProgress />
+               </Box>
+          );
+     }
+
+     if (error) {
+          return (
+               <Box sx={{p: 2}}>
+                    <Typography color="error">
+                         Erro ao carregar funcionários: {error.message}
+                    </Typography>
                </Box>
           );
      }
