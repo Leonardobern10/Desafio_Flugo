@@ -6,7 +6,7 @@ export default function StatusTableCell({text}: TableCellType): ReactElement {
      return (
           <TableCell align="right">
                <Box
-                    data-testId="status-table-cell"
+                    data-testid="status-table-cell"
                     sx={{
                          display: 'flex',
                          justifyContent: 'flex-end',

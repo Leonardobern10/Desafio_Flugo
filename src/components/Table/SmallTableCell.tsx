@@ -5,7 +5,7 @@ import type {ReactElement} from 'react';
 
 export default function SmallTableCell({text}: TableCellType): ReactElement {
      return (
-          <TableCell data-testId="table-cell" align="left">
+          <TableCell data-testid="table-cell" align="left">
                <Typography fontSize="small">{text}</Typography>
           </TableCell>
      );
