@@ -7,7 +7,7 @@ function App() {
      return (
           <Box
                sx={{
-                    padding: 4,
+                    padding: {xs: 2, lg: 4},
                     bgcolor: '#FFF',
                     width: '100%',
                     height: '100dvh',

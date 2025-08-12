@@ -1,20 +1,20 @@
 import {Step, StepLabel, Stepper, Typography} from '@mui/material';
 import type {ReactElement} from 'react';
 import type {GuideStepsProps} from 'types/GuideStepsProps';
+import isMobile from '@services/isMobile';
 
 export default function GuideSteps({
      activeStep,
      steps,
 }: GuideStepsProps): ReactElement {
+     const mobile = isMobile();
      return (
           <Stepper
                activeStep={activeStep}
-               orientation="vertical" // ou 'horizontal' se preferir
+               orientation={mobile ? 'horizontal' : 'vertical'} // ou 'horizontal' se preferir
                connector={null}
                sx={{
                     minWidth: 170,
-                    display: 'flex',
-                    flexDirection: 'column',
                     rowGap: activeStep === 1 ? 0 : 10,
                }}>
                {steps.map((label) => (

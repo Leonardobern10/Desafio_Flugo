@@ -58,15 +58,22 @@ export default function FormContext(props: {
      };
 
      return (
-          <Box sx={{paddingRight: 4}}>
+          <Box
+               sx={{
+                    paddingRight: {xs: 0, lg: 4},
+               }}>
                <HeaderForm onClick={props.onClick} />
                <ProgressForm progress={progress} />
                <Container maxWidth="xl" sx={{mt: 4}}>
                     <Box
                          sx={{
-                              display: 'flex',
                               gap: 4,
                               minHeight: '280px',
+                              width: '100%',
+                              display: 'flex',
+                              flexDirection: {xs: 'column', lg: 'row'},
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
                          }}>
                          {/* Stepper */}
                          <GuideSteps

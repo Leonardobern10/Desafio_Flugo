@@ -26,7 +26,7 @@ export default function MainContent(): ReactElement {
                               display: 'flex',
                               flexDirection: 'column',
                               rowGap: 4,
-                              paddingLeft: 4,
+                              paddingLeft: {xs: 0, lg: 4},
                          }}>
                          <TopTable onClick={() => setShowStepper(true)} />
                          <Box
