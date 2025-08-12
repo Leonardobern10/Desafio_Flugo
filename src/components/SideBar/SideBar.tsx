@@ -21,7 +21,7 @@ export default function SideBar(): ReactElement {
                     paddingTop: 2,
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100%',
+                    height: {xs: '3rem', lg: '100%'},
                     width: '20%',
                     rowGap: 2,
                }}>

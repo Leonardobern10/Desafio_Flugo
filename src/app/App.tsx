@@ -30,6 +30,7 @@ function App() {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     alignItems: 'center',
+                    border: 2,
                }}>
                <Header />
                <Grid
@@ -37,9 +38,9 @@ function App() {
                          height: '100%',
                          width: '100%',
                          display: 'flex',
-                         flexDirection: {sx: 'column', lg: 'row'},
+                         flexDirection: {xs: 'column', lg: 'row'},
                          justifyContent: 'center',
-                         alignItems: 'end',
+                         alignItems: {xs: 'flex-start', lg: 'end'},
                     }}>
                     <SideBar />
                     <MainContent />

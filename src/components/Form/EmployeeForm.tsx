@@ -82,7 +82,7 @@ export default function EmployeeForm(props: {
                     <Box
                          sx={{
                               gap: 4,
-                              minHeight: '280px',
+                              minHeight: {xs: '30dvh', lg: '280px'},
                               width: '100%',
                               display: 'flex',
                               flexDirection: {xs: 'column', lg: 'row'},
