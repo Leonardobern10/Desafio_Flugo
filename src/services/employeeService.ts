@@ -1,6 +1,7 @@
 import {addDoc, collection, getDocs} from 'firebase/firestore';
 import {db} from './firebase';
 import type {EmployerFormDataType} from 'types/EmployerFormDataType';
+import randomAvatarGenerate from './randomAvatarGenerate';
 
 export async function getEmployees(): Promise<EmployerFormDataType[]> {
      try {
@@ -14,6 +15,7 @@ export async function getEmployees(): Promise<EmployerFormDataType[]> {
                email: el.get('email'),
                departamento: el.get('departamento'),
                status: el.get('status'),
+               avatar: el.get('avatar') || '',
           }));
      } catch (error) {
           console.error('Erro ao buscar funcionários:', error);
@@ -30,6 +32,7 @@ export async function createUser(
                email: employeeData.email,
                departamento: employeeData.departamento,
                status: employeeData.status,
+               avatar: randomAvatarGenerate(),
           });
           console.log('Document criado:', docRef.id);
      } catch (error) {

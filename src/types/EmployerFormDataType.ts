@@ -3,4 +3,5 @@ export type EmployerFormDataType = {
      email: string;
      departamento: string;
      status: string;
+     avatar?: string;
 };

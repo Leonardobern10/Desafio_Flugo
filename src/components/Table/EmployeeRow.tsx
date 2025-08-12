@@ -9,11 +9,11 @@ export default function EmployeeRow({
 }: {
      employee: EmployerFormDataType;
 }) {
-     const {titulo, email, departamento, status} = employee;
+     const {titulo, email, departamento, status, avatar} = employee;
 
      return (
           <TableRow>
-               <TitleTableCell text={titulo} />
+               <TitleTableCell avatar={avatar} text={titulo} />
                <SmallTableCell text={email} />
                <SmallTableCell text={departamento} />
                <StatusTableCell text={status} />

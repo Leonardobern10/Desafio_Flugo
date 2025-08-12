@@ -1,9 +1,11 @@
 import {Avatar, Box, TableCell, Typography} from '@mui/material';
-import randomAvatarGenerate from '@services/randomAvatarGenerate';
 import type {TableCellType} from 'types/TableCellType';
 import type {ReactElement} from 'react';
 
-export default function TitleTableCell({text}: TableCellType): ReactElement {
+export default function TitleTableCell({
+     text,
+     avatar,
+}: TableCellType): ReactElement {
      return (
           <TableCell align="left">
                <Box
@@ -13,7 +15,7 @@ export default function TitleTableCell({text}: TableCellType): ReactElement {
                          alignItems: 'center',
                          columnGap: 2,
                     }}>
-                    <Avatar src={randomAvatarGenerate()} />
+                    <Avatar src={avatar} />
                     <Typography fontSize="small">{text}</Typography>
                </Box>
           </TableCell>
