@@ -1,4 +1,10 @@
-import {Step, StepLabel, Stepper, Typography} from '@mui/material';
+import {
+     Step,
+     StepConnector,
+     StepLabel,
+     Stepper,
+     Typography,
+} from '@mui/material';
 import type {ReactElement} from 'react';
 import type {GuideStepsProps} from 'types/GuideStepsProps';
 import isMobile from '@services/isMobile';
@@ -15,7 +21,7 @@ export default function GuideSteps({
                connector={null}
                sx={{
                     minWidth: 170,
-                    rowGap: activeStep === 1 ? 0 : 10,
+                    rowGap: activeStep === 1 ? 0 : '5rem',
                }}>
                {steps.map((label) => (
                     <Step key={label.step}>
