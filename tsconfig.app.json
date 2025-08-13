@@ -32,7 +32,8 @@
                "@images/*": ["assets/images/*"],
                "@validations/*": ["validations/*"],
                "@hooks/*": ["hooks/*"]
-          }
+          },
+          "types": ["vitest/globals", "node"]
      },
      "include": ["src"]
 }
