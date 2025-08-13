@@ -31,7 +31,7 @@
                "@types/*": ["types/*"],
                "@validations": ["validations/*"],
                "@hooks": ["hooks/*"],
-               "@images/*": ["src/images/*"]
+               "@images/*": ["src/assets/images/*"]
           }
      },
      "include": ["src"]
