@@ -33,7 +33,7 @@ describe('EmployeeRow', () => {
           expect(screen.getByText(mockEmployee.status)).toBeInTheDocument();
 
           // Opcional: verificar se o avatar está presente no DOM (imagem dentro do Avatar)
-          const avatarImg = tableRow.querySelector('img');
+          const avatarImg = (tableRow as HTMLElement).querySelector('img');
           expect(avatarImg).toHaveAttribute('src', mockEmployee.avatar);
      });
 });

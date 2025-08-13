@@ -28,7 +28,7 @@ describe('TitleTableCell', () => {
           expect(screen.getByText(textMock)).toBeInTheDocument();
 
           // Verifica se a imagem do Avatar está com o src correto
-          const avatarImg = container.querySelector('img');
+          const avatarImg = (container as HTMLElement).querySelector('img');
           expect(avatarImg).toHaveAttribute('src', avatarMock);
      });
 

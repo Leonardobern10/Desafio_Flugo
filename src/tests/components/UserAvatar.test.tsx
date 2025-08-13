@@ -11,7 +11,7 @@ describe('UserAvatar', () => {
           expect(avatar).toBeInTheDocument();
 
           // Busca o elemento <img> dentro do Avatar
-          const img = avatar.querySelector('img');
+          const img = (avatar as HTMLElement).querySelector('img');
           expect(img).toBeInTheDocument();
 
           // Verifica se a imagem tem o alt correto
