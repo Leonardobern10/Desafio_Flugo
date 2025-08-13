@@ -19,25 +19,7 @@
           "noUnusedParameters": true,
           "erasableSyntaxOnly": true,
           "noFallthroughCasesInSwitch": true,
-          "noUncheckedSideEffectImports": true,
-          "types": ["vitest/globals", "node", "@testing-library/jest-dom"],
-          "jsx": "react-jsx",
-          "baseUrl": "./src",
-          "paths": {
-               "@components/*": ["components/*"],
-               "@services/*": ["services/*"],
-               "@data/*": ["data/*"],
-               "@types/*": ["types/*"],
-               "@images/*": ["assets/images/*"],
-               "@validations/*": ["validations/*"],
-               "@hooks/*": ["hooks/*"]
-          }
+          "noUncheckedSideEffectImports": true
      },
-     "include": [
-          "vite.config.ts",
-          "src/**/*.test.ts",
-          "src/**/*.test.tsx",
-          "tests/**/*.test.ts",
-          "tests/**/*.test.tsx"
-     ]
+     "include": ["vite.config.ts"]
 }

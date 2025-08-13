@@ -22,17 +22,17 @@
           "erasableSyntaxOnly": false,
           "noFallthroughCasesInSwitch": true,
           "noUncheckedSideEffectImports": true,
+
           "baseUrl": "./src",
           "paths": {
                "@components/*": ["components/*"],
                "@services/*": ["services/*"],
                "@data/*": ["data/*"],
                "@types/*": ["types/*"],
-               "@images/*": ["assets/images/*"],
-               "@validations/*": ["validations/*"],
-               "@hooks/*": ["hooks/*"]
-          },
-          "types": ["vitest/globals", "node"]
+               "@validations": ["validations/*"],
+               "@hooks": ["hooks/*"],
+               "@images/*": ["src/images/*"]
+          }
      },
      "include": ["src"]
 }
