@@ -21,7 +21,17 @@
           "noFallthroughCasesInSwitch": true,
           "noUncheckedSideEffectImports": true,
           "types": ["vitest/globals", "node", "@testing-library/jest-dom"],
-          "jsx": "react-jsx"
+          "jsx": "react-jsx",
+          "baseUrl": "./src",
+          "paths": {
+               "@components/*": ["components/*"],
+               "@services/*": ["services/*"],
+               "@data/*": ["data/*"],
+               "@types/*": ["types/*"],
+               "@images/*": ["assets/images/*"],
+               "@validations/*": ["validations/*"],
+               "@hooks/*": ["hooks/*"]
+          }
      },
      "include": [
           "vite.config.ts",
