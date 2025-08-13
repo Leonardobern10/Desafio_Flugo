@@ -28,8 +28,6 @@ export default function SideBar(): ReactElement {
                <Box
                     sx={{
                          color: 'text.secondary',
-                         fontSize: '14px',
-                         lineHeight: '22px',
                          width: '100%',
                     }}>
                     <Box

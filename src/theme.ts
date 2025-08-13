@@ -31,9 +31,10 @@ const theme = createTheme({
                styleOverrides: {
                     root: {
                          fontWeight: 400,
-                         fontSize: '14px',
+                         fontSize: '0.8rem',
                          lineHeight: '22px',
                          letterSpacing: 0,
+                         border: 2,
                     },
                },
                defaultProps: {
@@ -46,13 +47,14 @@ const theme = createTheme({
                          color: '#FFFFFF',
                          fontWeight: 700,
                          fontStyle: 'bold',
-                         fontSize: '15px',
+                         fontSize: '0.9rem',
                          lineHeight: '26px',
                          letterSpacing: 0,
                          paddingY: 2,
                          '& .MuiOutlinedInput-root': {
                               borderRadius: 8, // arredondado padrão do theme.shape.borderRadius
                          },
+                         border: 2,
                     },
                },
                defaultProps: {},

@@ -32,7 +32,7 @@ export default function ControlledSwitch({
                     onChange={onChange}
                     slotProps={{input: {'aria-label': 'controlled'}}}
                />
-               <Typography color="text.secondary" sx={{fontSize: '14px'}}>
+               <Typography color="text.secondary" sx={{fontSize: '0.8rem'}}>
                     {text}
                </Typography>
           </Box>

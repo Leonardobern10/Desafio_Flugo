@@ -38,7 +38,7 @@ export default function StatusTableCell({text}: TableCellType): ReactElement {
                               padding: '4px 8px',
                               borderRadius: 2,
                               fontWeight: 700,
-                              fontSize: '12px',
+                              fontSize: '0.7rem',
                          }}>
                          {text}
                     </Typography>

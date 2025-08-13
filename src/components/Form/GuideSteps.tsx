@@ -32,7 +32,7 @@ export default function GuideSteps({
                {steps.map((label) => (
                     <Step key={label.step}>
                          <StepLabel>
-                              <Typography fontSize="13px">
+                              <Typography fontSize="0.9rem">
                                    {label.step}
                               </Typography>
                          </StepLabel>
