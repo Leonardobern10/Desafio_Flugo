@@ -13,6 +13,8 @@
 
 Projeto para desafio frontend que consiste em um formulário de cadastro de funcionários em múltiplas etapas, utilizando React com TypeScript, estilizado com Material UI, e persistência dos dados via Firebase Firestore.
 
+[Link do site](https://desafio-flugo-leonardobernardo.vercel.app/)
+
 ## Tecnologias Utilizadas
 
 - **ReactJS** (v18) com **TypeScript**
