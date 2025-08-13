@@ -21,7 +21,7 @@ vi.mock('@components/ControlledSwitch', () => ({
 // Mock do useFormContext para fornecer dados controlados
 vi.mock('react-hook-form', () => ({
      useFormContext: vi.fn(),
-     Controller: ({render, name, control}: any) => {
+     Controller: ({render, name}: any) => {
           // Simula o Controller chamando o render com um field
           return render({
                field: {
