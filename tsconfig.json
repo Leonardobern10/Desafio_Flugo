@@ -4,7 +4,16 @@
           {"path": "./tsconfig.app.json"},
           {"path": "./tsconfig.node.json"}
      ],
-
+     "baseUrl": "src",
+     "paths": {
+          "@components/*": ["components/*"],
+          "@services/*": ["services/*"],
+          "@data/*": ["data/*"],
+          "@types/*": ["types/*"],
+          "@images/*": ["assets/images/*"],
+          "@validations/*": ["validations/*"],
+          "@hooks/*": ["hooks/*"]
+     },
      "compilerOptions": {
           "types": ["vitest/globals"]
      }

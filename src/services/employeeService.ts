@@ -1,8 +1,8 @@
 import {addDoc, collection, getDocs} from 'firebase/firestore';
 import {db} from './firebase';
-import type {EmployerFormDataType} from 'types/EmployerFormDataType';
-import randomAvatarGenerate from './randomAvatarGenerate';
+import type {EmployerFormDataType} from '../types/EmployerFormDataType';
 import {toast} from 'react-toastify';
+import randomAvatarGenerate from './randomAvatarGenerate';
 
 /**
  * Busca todos os funcionários da coleção "employees" no Firestore.
