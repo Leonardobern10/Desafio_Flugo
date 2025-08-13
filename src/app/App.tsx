@@ -30,7 +30,6 @@ function App() {
                     flexDirection: 'column',
                     justifyContent: 'space-between',
                     alignItems: 'center',
-                    border: 2,
                }}>
                <Header />
                <Grid
