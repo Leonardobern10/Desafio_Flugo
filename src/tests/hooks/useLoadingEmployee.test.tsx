@@ -1,6 +1,6 @@
 import {renderHook, waitFor} from '@testing-library/react'; // <- importei waitFor
 import {describe, it, expect, vi} from 'vitest';
-import useLoadingEmployees from '@hooks/useLoadingEmployees';
+import useLoadingEmployees from '../../hooks/useLoadingEmployees';
 import * as employeeService from '@services/employeeService';
 
 const mockEmployees = [

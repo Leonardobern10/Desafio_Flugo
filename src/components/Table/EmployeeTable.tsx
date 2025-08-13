@@ -13,8 +13,9 @@ import {
 import type {ReactElement} from 'react';
 import {headerTableDatas} from '@data/dataTable';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import useLoadingEmployees from '@hooks/useLoadingEmployees';
+import useLoadingEmployees from '../../hooks/useLoadingEmployees';
 import EmployeeRow from './EmployeeRow';
+import type {EmployerFormDataType} from '../../types/EmployerFormDataType';
 
 /**
  * Componente TableEmployee exibe uma tabela com os dados dos funcionários.
@@ -105,9 +106,11 @@ export default function TableEmployee(): ReactElement {
                          </TableRow>
                     </TableHead>
                     <TableBody>
-                         {employees.map((emp, index) => (
-                              <EmployeeRow key={index} employee={emp} />
-                         ))}
+                         {employees.map(
+                              (emp: EmployerFormDataType, index: number) => (
+                                   <EmployeeRow key={index} employee={emp} />
+                              )
+                         )}
                     </TableBody>
                </Table>
           </TableContainer>

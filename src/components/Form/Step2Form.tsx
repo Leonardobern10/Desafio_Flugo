@@ -3,7 +3,7 @@ import {Box, MenuItem, TextField} from '@mui/material';
 
 import type {ReactElement} from 'react';
 import {useFormContext} from 'react-hook-form';
-import type {EmployeeSchemaType} from '@validations/employeeSchema';
+import type {EmployeeSchemaType} from '../../validations/employeeSchema';
 
 /**
  * Componente do segundo passo do formulário de cadastro.
