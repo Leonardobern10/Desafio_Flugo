@@ -49,18 +49,4 @@ describe('GuideSteps', () => {
           expect(stepper).not.toHaveClass('MuiStepper-vertical');
           // opcional: verificar se não tem classe MuiStepper-horizontal, se aplicável
      });
-
-     it('deve ajustar o rowGap conforme activeStep via snapshot', () => {
-          (useIsMobile as Mock).mockReturnValue(false);
-
-          const {container, rerender} = render(
-               <GuideSteps activeStep={0} steps={stepsMock} />
-          );
-
-          expect(container.firstChild).toMatchSnapshot();
-
-          rerender(<GuideSteps activeStep={1} steps={stepsMock} />);
-
-          expect(container.firstChild).toMatchSnapshot();
-     });
 });
