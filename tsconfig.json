@@ -15,6 +15,6 @@
           "@hooks/*": ["hooks/*"]
      },
      "compilerOptions": {
-          "types": ["vitest/globals"]
+          "types": ["vite/client"]
      }
 }
