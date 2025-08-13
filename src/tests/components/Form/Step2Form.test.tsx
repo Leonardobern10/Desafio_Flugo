@@ -1,5 +1,5 @@
 import {render, screen, fireEvent} from '@testing-library/react';
-import {describe, it, expect, vi, beforeEach} from 'vitest';
+import {describe, it, expect, vi, beforeEach, type Mock} from 'vitest';
 import {useFormContext} from 'react-hook-form';
 import Step2Form from '@components/Form/Step2Form';
 import {dataAllDepartaments} from '@data/dataAllDepartaments';
@@ -10,7 +10,7 @@ describe('Step2Form', () => {
      const mockRegister = vi.fn();
 
      beforeEach(() => {
-          (useFormContext as vi.Mock).mockReturnValue({
+          (useFormContext as Mock).mockReturnValue({
                register: mockRegister,
                formState: {errors: {}},
           });
@@ -34,7 +34,7 @@ describe('Step2Form', () => {
      it('deve exibir mensagem de erro quando houver erro no campo departamento', () => {
           const errorMessage = 'Departamento é obrigatório';
 
-          (useFormContext as vi.Mock).mockReturnValueOnce({
+          (useFormContext as Mock).mockReturnValueOnce({
                register: mockRegister,
                formState: {
                     errors: {

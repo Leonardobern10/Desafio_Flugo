@@ -1,5 +1,5 @@
 import {render, screen, fireEvent} from '@testing-library/react';
-import {describe, it, expect, vi, beforeEach} from 'vitest';
+import {describe, it, expect, vi, beforeEach, type Mock} from 'vitest';
 import Step1Form from '@components/Form/Step1Form';
 import {useFormContext} from 'react-hook-form';
 
@@ -46,7 +46,7 @@ describe('Step1Form', () => {
      const mockErrors = {};
 
      beforeEach(() => {
-          (useFormContext as vi.Mock).mockReturnValue({
+          (useFormContext as Mock).mockReturnValue({
                register: mockRegister,
                control: mockControl,
                formState: {errors: mockErrors},
@@ -80,7 +80,7 @@ describe('Step1Form', () => {
      });
 
      it('deve exibir mensagens de erro quando presentes', () => {
-          (useFormContext as vi.Mock).mockReturnValueOnce({
+          (useFormContext as Mock).mockReturnValueOnce({
                register: mockRegister,
                control: mockControl,
                formState: {
