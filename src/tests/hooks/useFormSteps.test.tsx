@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, act} from '@testing-library/react';
 import {describe, expect, it, vi} from 'vitest';
-import {useFormSteps} from '@hooks/useFomSteps';
+import {useFormSteps} from '../../hooks/useFomSteps';
 
 function HookWrapper({hookProps, onRender}: any) {
      const hook = useFormSteps(hookProps);

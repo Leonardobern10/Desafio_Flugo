@@ -13,8 +13,8 @@ import {zodResolver} from '@hookform/resolvers/zod';
 import {
      employeeSchema,
      type EmployeeSchemaType,
-} from '@validations/employeeSchema';
-import {useFormSteps} from '@hooks/useFomSteps'; // corrigir nome do arquivo aqui!
+} from '../../validations/employeeSchema';
+import {useFormSteps} from '../../hooks/useFomSteps'; // corrigir nome do arquivo aqui!
 
 /**
  * Componente de formulário multi-etapas para cadastro de funcionário.
