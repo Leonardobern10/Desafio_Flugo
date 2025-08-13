@@ -62,7 +62,7 @@ export default function TableEmployee(): ReactElement {
      return (
           <TableContainer
                sx={{
-                    maxHeight: '50dvh',
+                    maxHeight: {xs: '70dvh', lg: '60dvh'},
                     overflowY: 'auto',
                }}
                component={Box}>

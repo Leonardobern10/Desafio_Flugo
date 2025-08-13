@@ -13,5 +13,5 @@ import theme from '../theme';
  *
  * */
 export default function useIsMobile(): boolean {
-     return useMediaQuery(theme.breakpoints.down('md'));
+     return useMediaQuery(theme.breakpoints.down('lg'));
 }
